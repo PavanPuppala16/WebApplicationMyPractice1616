@@ -1,0 +1,37 @@
+﻿@using WebApplicationMyPractice1616.Models;
+@model InsetModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Inserting</title>
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <h4>creating account</h4>
+        <div>
+            <label>emilid<span>*</span></label>
+            <div class=""
+                
+                @Html.TextBoxFor(model=>model.EmailId,new{@class="flow-controll",placeholder="enter your email"})
+                @Html.ValidationMessageFor(model=>model.EmailId,"",new {@class="text-danger"})
+            ></div>
+        </div>
+        <div>
+            <label>Password<span>*</span></label>
+            <div class=""
+             @Html.TextBoxFor(model=>model.Password,new{@class="flow-controll",placeholder="enter your email"})
+             @Html.ValidationMessageFor(model=>model.Password,"",new {@class="text-danger"})></div>
+        </div>
+
+
+    }
+</body>
+</html>

@@ -1,0 +1,47 @@
+﻿@using WebApplicationMyPractice1616.Models;
+@model First
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Register</title>
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <h4>Create  account</h4>
+        <label>ID<span></span></label>
+        <div>
+
+   
+        @Html.TextBoxFor(model=>model.Id)
+        @Html.ValidationMessageFor(model=>model.Id)
+        </div>
+        <label>Name<span></span></label>
+        <div>
+        @Html.TextBoxFor(model=>model.Name)
+        @Html.ValidationMessageFor(model=>model.Name)
+        </div>
+        <label>EmailId<span>*</span></label>
+        <div>
+        @Html.TextBoxFor(model=>model.EmailId)
+        @Html.ValidationMessageFor(model=>model.EmailId)
+        </div>
+        <label>Password<span></span></label>
+        <div>
+        @Html.TextBoxFor(model=>model.Password)
+        @Html.ValidationMessageFor(model=>model.Password)
+        </div>
+        <div class="col-md-5">
+            <input type="submit" class="btn btn-primary float-end" value="Submit">
+
+        </div>
+    }
+</body>
+</html>
